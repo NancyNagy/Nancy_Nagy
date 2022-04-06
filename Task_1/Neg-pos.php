@@ -12,20 +12,17 @@
 </head>
 
 <body>
-    <h1 class="container alert alert-success text-center mt-4">Maximum && Minimum</h1>
+
+    <h1 class="container alert alert-primary text-center mt-4">Negative || Positive</h1>
     <div class="container mt-4">
         <form method="post">
             <input type="number" name="num_1" class="form-control"> <br>
-            <input type="number" name="num_2" class="form-control"> <br>
-            <input type="number" name="num_3" class="form-control"> <br>
-            <button type="submit" name="submit" class="btn btn-primary form-control">Calculate</button>
+
+
+            <button type="submit" name="submit" class="btn btn-primary form-control">Check</button>
 
         </form>
     </div>
-
-
-
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -35,37 +32,20 @@
 
 </html>
 
+
 <?php
 
 if ($_POST) {
     $num1 = $_POST["num_1"];
-    $num2 = $_POST["num_2"];
-    $num3 = $_POST["num_3"];
 
-    if (($num1 > $num2) && ($num1 > $num3))
+    if ($num1 > 0) {
         echo "<div class='container alert alert-success mt-4 text-center'>
-              <h3><strong>max no. is </strong>$num1</h3>
-             </div>";
-    if (($num2 > $num1) && ($num2 > $num3))
+        This number is <strong> positive </strong> {$num1}
+        </div>";
+    } else {
         echo "<div class='container alert alert-success mt-4 text-center'>
-             <h3><strong>max no. is </strong>$num2</h3>
-            </div>";
-    if (($num3 > $num1) && ($num3 > $num2))
-        echo "<div class='container alert alert-success mt-4 text-center'>
-             <h3><strong>max no. is </strong>$num3</h3>
-            </div>";
-    if (($num1 < $num2) && ($num1 < $num3))
-        echo "<div class='container alert alert-success mt-4 text-center'>
-             <h3><strong>min no. is </strong>$num1</h3>
-            </div>";
-    if (($num2 < $num1) && ($num2 < $num3))
-        echo "<div class='container alert alert-success mt-4 text-center'>
-             <h3><strong>min no. is </strong>$num2</h3>
-            </div>";
-    if (($num3 < $num1) && ($num3 < $num2))
-        echo "<div class='container alert alert-success mt-4 text-center'>
-             <h3><strong>min no. is </strong>$num3</h3>
-            </div>";
+        This number is <strong> negative </strong> {$num1}
+        </div>";
+    }
 }
-
 ?>
